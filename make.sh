@@ -1,0 +1,36 @@
+#! /bin/bash
+gcc -Wall \
+OdyinkServer.c \
+install.c \
+docIndex.c \
+importDoc.c \
+deleteDoc.c \
+fm/fileio.c \
+fm/viewIndex.c \
+fm/switchDoc.c \
+fm/readType.c \
+fm/getin.c \
+fm/getcUTF8.c \
+fm/viewText.c \
+fm/searchItem.c \
+fm/indexCov.c \
+fm/typeCov.c \
+process/crlfTo0.c \
+process/sitois.c \
+process/timeStr.c \
+process/arrclean.c \
+process/pathOpt.c \
+process/getType.c \
+process/fill.c \
+opendoc/openDoc.c \
+opendoc/viewText.c \
+options/options.c \
+options/help.c \
+options/about.c \
+options/uninstall.c \
+options/reinstall.c \
+command/delalldoc.c \
+command/cmdSet.c \
+command/command.c \
+-o OdyinkServer
+#./OdyinkServer
