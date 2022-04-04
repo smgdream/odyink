@@ -1,6 +1,6 @@
 # Odyink仓库
 ## Odyink repositorie
-##License
+## License
 MIT License
 
 Copyright (c) 2022 smgdream
