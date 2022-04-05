@@ -4,7 +4,7 @@ Odyink仓库
 ## License
 ### MIT License
 
-#### Copyright (c) 2022 smgdream
+#### Copyright (c) 2020-2022 smgdream
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
