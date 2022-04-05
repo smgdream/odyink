@@ -2,8 +2,7 @@
 
 //#include "include/debug.h"
 
-// version 0.4
-// 2022-01-25 21:50:30 (UTC+8)
+// version 0.5 Dev
 
 int main()
 {
