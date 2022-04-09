@@ -17,8 +17,8 @@ void docIndex(void)
 		}
 		findSign = 0;
 		//
-		printf("\n\n[I]mport   [S]earch  [D]elte\n");
-		printf("[O]ptions            [E]xit\n");
+		printf("\n\n[I]mport   [R]ename  [D]elte\n");
+		printf("[O]ptions  [S]earch  [E]xit\n");
 		printf("\n");
 		printf("ID:");
 		getstr(docIp, ID_LEN);
@@ -27,8 +27,14 @@ void docIndex(void)
 				case 'I':
 					importDoc();
 					break;
+				case 'R' :
+					renameDoc();
+					break;
 				case 'D':
 					deleteDoc();
+					break;
+				case 'O':
+					options();
 					break;
 				case 'S':
 					printf("\nKeyword: ");
@@ -38,14 +44,11 @@ void docIndex(void)
 					printf("\n[B]ack to index");
 					findSign = 1;
 					break;
-				case 'O':
-					options();
+				case 'E':
+					return;
 					break;
 				case 'B':
 					findSign = 0;
-					break;
-				case 'E':
-					return;
 					break;
 				default:
 					printf("Input Error\n");
@@ -57,4 +60,5 @@ void docIndex(void)
 		openDoc(stoi(docIp));
 		clear();
 	}
+	return;
 }

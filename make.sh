@@ -5,13 +5,13 @@ install.c \
 docIndex.c \
 importDoc.c \
 deleteDoc.c \
+renameDoc.c \
 fm/fileio.c \
 fm/viewIndex.c \
 fm/switchDoc.c \
 fm/readType.c \
 fm/getin.c \
 fm/getcUTF8.c \
-fm/viewText.c \
 fm/searchItem.c \
 fm/indexCov.c \
 fm/typeCov.c \
