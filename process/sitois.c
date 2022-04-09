@@ -3,6 +3,8 @@
 
 #define SIZE_BIG 1024
 
+#define NODATA (EOF)
+
 #define strcopy(_T, _S) {\
 	int _i = 0;\
 	for (char *_t = _T, *_s = _S; (*(_t + _i) = *(_s + _i)); ++_i)\
@@ -12,7 +14,7 @@
 
 int stoi(char *numstr)
 {
-	int number = 0;
+	int number = NODATA;
 	sscanf(numstr, "%d", &number);
 	return number;
 }
