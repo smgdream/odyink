@@ -9,6 +9,7 @@
 	void docIndex(void);
 	void importDoc(void);
 	void deleteDoc(void);
+	void renameDoc(void);
 
 
 	// Open Document
@@ -29,6 +30,7 @@
 		void cmdRestore(void);
 		void delAllDoc(void);
 		void genSleep(int second);
+		void editText(const char *fpath);
 	//
 
 	// Files Manipulation
