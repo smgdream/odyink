@@ -13,8 +13,8 @@ void importDoc(void)
 		char fileType[4];
 		char logs[256];
 		char docTitle[TITLE_MAX_LEN + 1];
-		char typeIndex[TYPE_LEN + 1];
-		char titleIndex[INDEX_LEN + 1 + 3];
+		char typeIndex[TYPE_INDEX_LEN + 1];
+		char titleIndex[INDEX_LEN + 1];
 		int newNum;
 		int newId;
 
@@ -25,7 +25,7 @@ void importDoc(void)
 		printf("Doc path:");
 		getstr(filePath, 256);
 		strcpy(filePath, rmQuote(unixPath(filePath)));
-		if (toupper(filePath[0]) == 'Q')
+		if (!strcmp(filePath, "q") || !strcmp(filePath, "Q"))
 			break;
 		if (!fexist(filePath))
 		{
@@ -37,7 +37,7 @@ void importDoc(void)
 		// Input Doc title
 		printf("Doc title:");
 		getstr(docTitle, TITLE_MAX_LEN); // Don't change easy
-		if (toupper(docTitle[0]) == 'Q')
+		if (!strcmp(docTitle, "q") || !strcmp(docTitle, "Q"))
 			break;
 		//
 		//Get file Type
@@ -59,22 +59,24 @@ void importDoc(void)
 
 		// Start import the doc
 		// Write the docID
-		fnewout("./odydata/allocid.ini", itos(newId));
+			fnewout("./odydata/allocid.ini", itos(newId));
 		// Write the number of doc
-		fnewout("./odydata/docnum.ini", itos(newNum));
+			fnewout("./odydata/docnum.ini", itos(newNum));
 		// Write the doc type
-		sprintf(typeIndex, "%s %s\t", fill(itos(newId), ID_LEN, '0'), fileType);
-		faddout("./odydata/doctype.ini", typeIndex);
+			sprintf(typeIndex, "%s ", fill(itos(newId), ID_LEN, '0'));
+			strcat(typeIndex, fill(fileType, -TYPE_LEN, '0'));
+			strcat(typeIndex, "\t");
+			faddout("./odydata/doctype.ini", typeIndex);
 		// Write the index
-		sprintf(titleIndex, "%d.%s", newId, docTitle);
-		sprintf(titleIndex, "%s\t", fill(titleIndex, -(INDEX_LEN - 1), '\v'));
-		faddout("./odydata/docindex.ini", titleIndex);
+			sprintf(titleIndex, "%s.%s", itos(newId), docTitle);
+			sprintf(titleIndex, "%s\t", fill(titleIndex, -(INDEX_LEN - 1), '\v'));
+			faddout("./odydata/docindex.ini", titleIndex);
 		// Copy the doc
-		sprintf(docPath, "./odydata/doc/%d.%s", newId, fileType);
-		fcopy(filePath, docPath);
+			sprintf(docPath, "./odydata/doc/%d.%s", newId, fileType);
+			fcopy(filePath, docPath);
 		// Write the logs
-		sprintf(logs, "%s (UTC)\t %s %s\n", timeStr(UTC), "Import", docTitle);
-		faddout("./odydata/odyink.log", logs);
+			sprintf(logs, "%s (UTC)\t %s %s\n", timeStr(UTC), "Import", docTitle);
+			faddout("./odydata/odyink.log", logs);
 		//
 		printf("\nFinish\n");
 		genSleep(2);
