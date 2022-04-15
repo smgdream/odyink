@@ -9,9 +9,12 @@ void runCpp(const char *fpath)
 	char tmpstr[SIZE_BIG];
 	sprintf(tmpstr, "g++ %s", fpath);
 	system(tmpstr);
-	if (OSNUM)
+	if (OSNUM) {
 		system("a.exe");
-	else
+		remove("a.exe");
+	}
+	else {
 		system("./a.out");
-	return;
+		remove("a.exe");
+	}
 }

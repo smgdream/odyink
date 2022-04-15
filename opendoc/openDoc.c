@@ -13,33 +13,35 @@ void runPy(const char *fpath);
 
 void openDoc(int id)
 {
-	//char ip = '\0';
 	while (1)
 	{
-		int sign = 0;
 		clear();
 		char *docType = NULL;
 		char docPath[32];
 		sprintf(docPath, "./odydata/doc/%d.%s", id, docType = readType(id));
 		if (!strcmp(docType, "txt")) {
-			sign = 1;
 			viewText(docPath);
-			printf("          [E]dit          \n");
+			putchar('\n');
 		}
 		else if (!strcmp(docType, "sh")) {
-			if (exopt(docPath)) {
-				//runSh(docPath);
-				exopt(docPath);
-			}
-			
+			if (exopt(docPath))
+				runSh(docPath);
 		}
 		else if (!strcmp(docType, "bat")) {
+			if (exopt(docPath))
+				runBat(winPath(docPath));
 		}
 		else if (!strcmp(docType, "py")) {
+			if (exopt(docPath))
+				runPy(docPath);
 		}
 		else if (!strcmp(docType, "c")) {
+			if (exopt(docPath))
+				runC(docPath);
 		}
 		else if (!strcmp(docType, "cpp")) {
+			if (exopt(docPath))
+				runCpp(docPath);
 		}
 		else if (!strcmp(docType, "nul")) {
 			printf("The doc has been deleted\n");
@@ -52,7 +54,8 @@ void openDoc(int id)
 			break;
 		}
 		//
-		ipOpt:	
+		ipOpt:
+		printf("          [E]dit          \n");
 		printf("[B]ack    [Q]uit    [N]ext\n");
 		printf("\ninput: ");
 		switch (toupper(getchr())) {
@@ -80,17 +83,11 @@ void openDoc(int id)
 
 int exopt(char *docPath)
 {
-	char ip = '\0';
-	printf("[R]un              [E]dit\n");
-	printf("\ninput: ");
-	ip = toupper(getchr());
-	if (ip == 'R')
+	viewText(docPath);
+	printf("\n\n");
+	printf("Run executable document (y/n):\n");
+	if(toupper(getchr()) == 'Y')
 		return 1;
-	else if (ip == 'E')
-		editText(docPath);
-	else {
-		printf("input error\n");
+	else
 		return 0;
-	}
-	return 0;
 }
