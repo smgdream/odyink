@@ -60,7 +60,7 @@
 		char *getType(char *fpath);
 		char *fill(char *string, int size, char ch);
 		char *unixPath(char *fpath);
-		// char *winPath(char *fpath);
+		char *winPath(char *fpath);
 		// char *crlfto0(char *string);
 		// char *reverse(char *string);
 	//

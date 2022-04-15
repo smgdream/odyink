@@ -1,6 +1,6 @@
 #! /bin/bash
 gcc -Wall \
-OdyinkServer.c \
+main.c \
 install.c \
 docIndex.c \
 importDoc.c \
@@ -24,6 +24,11 @@ process/getType.c \
 process/fill.c \
 opendoc/openDoc.c \
 opendoc/viewText.c \
+opendoc/runSh.c \
+opendoc/runBat.c \
+opendoc/runPy.c \
+opendoc/runC.c \
+opendoc/runCpp.c \
 options/options.c \
 options/help.c \
 options/about.c \

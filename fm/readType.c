@@ -12,7 +12,7 @@ char *readType(int docId)
 	if (fp == NULL)
 		return NULL;
 	// Please view the Dev Document
-	fseek(fp, TYPE_LEN * docId + TYPE_OFFSET, SEEK_SET);
+	fseek(fp, TYPE_INDEX_LEN * docId + TYPE_OFFSET, SEEK_SET);
 	fgets(type, 3 + 1, fp);
 	for (int i = 0; i < 3; ++i)
 		type[i] == '0' ? type[i] = '\0' : 0 ;

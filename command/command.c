@@ -8,6 +8,8 @@
 	#include <unistd.h>
 #endif
 
+#define SIZE_MED 256
+
 
 void clear(void)
 {
@@ -31,3 +33,18 @@ void clear(void)
 		return;
 	}
 #endif
+
+void editText(const char *fpath)
+{
+	char tmpstr[SIZE_MED];
+	
+	if (OSNUM) {
+		sprintf(tmpstr, "notepad.exe %s", fpath);
+		system(tmpstr);
+	}
+	else {
+		sprintf(tmpstr, "gedit %s", fpath);
+		system(tmpstr);
+	}
+	return;
+}

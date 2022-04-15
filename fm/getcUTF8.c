@@ -27,7 +27,7 @@ int getcUTF8(char *bl1, FILE *fp)
 			sign *= -1;
 		if (sign == 1) {
 			*bl1++ = '\0';
-			return 0;
+			return 1;
 		}
 		*bl1++ = tc;
 		++buf2i;

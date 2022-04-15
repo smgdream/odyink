@@ -9,7 +9,6 @@ void indexCov(int docId, char *index)
 		return;
 	// Please view the Dev Document
 	fseek(fp, INDEX_LEN * docId, SEEK_SET);
-	ftell(fp);
 	fputs(index, fp);
 	fclose(fp);
 	return;

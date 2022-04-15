@@ -14,8 +14,7 @@ char *winPath(char *fpath)
 	arrclean(tmpePath, SIZE_BIG);
 	strcopy(tmpePath,fpath);
 
-	for (int i = 0;tmpePath[i] !='\0';++i)
-	{
+	for (int i = 0;tmpePath[i] !='\0';++i) {
 		if (tmpePath[i] =='/')
 			tmpePath[i] = '\\';
 	}
@@ -29,8 +28,7 @@ char *unixPath(char *fpath)
 	arrclean(tmpePath, SIZE_BIG);
 	strcopy(tmpePath,fpath);
 
-	for (int i = 0;tmpePath[i] !='\0';++i)
-	{
+	for (int i = 0;tmpePath[i] !='\0';++i) {
 		if (tmpePath[i] =='\\')
 			tmpePath[i] = '/';
 	}

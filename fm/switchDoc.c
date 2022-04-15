@@ -10,7 +10,7 @@ int backDoc(int id)
 		return nowid;
 	FILE *fp;
 	fp = fopen("./odydata/doctype.ini", "r");
-	while (!fseek(fp, --id * TYPE_LEN + TYPE_OFFSET, SEEK_SET))
+	while (!fseek(fp, --id * TYPE_INDEX_LEN + TYPE_OFFSET, SEEK_SET))
 		if ((c = fgetc(fp)) != 'n')
 		{
 			fclose(fp);
@@ -28,7 +28,7 @@ int nextDoc(int id)
 		return nowid;
 	FILE *fp;
 	fp = fopen("./odydata/doctype.ini", "r");
-	while (!fseek(fp, ++id * TYPE_LEN + TYPE_OFFSET, SEEK_SET))
+	while (!fseek(fp, ++id * TYPE_INDEX_LEN + TYPE_OFFSET, SEEK_SET))
 		if ((c = fgetc(fp)) != 'n')
 		{
 			if (c == EOF)

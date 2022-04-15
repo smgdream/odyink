@@ -8,7 +8,7 @@ if "%1"=="clean" exit
 echo makeing...
 ::::::::::::::::::::::::::::::::::::::::::::::::
 set cc="D:\gcc10\bin\gcc.exe"
-echo %cc%  -O2 -Wall ^^> link.tmp.bat
+echo %cc% ^^> link.tmp.bat
 for /f %%o in (make.ini) do (
 	echo CC %%o
 	%cc% -O2 -Wall -c %%o
