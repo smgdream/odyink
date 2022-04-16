@@ -10,4 +10,5 @@ void help(void)
 	printf("\n\nEnter to return\n");
 	getchr();
 	clear();
+	return;
 }

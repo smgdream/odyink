@@ -5,4 +5,5 @@ void uninstall(void)
 {
 	delAllDoc();
 	exit(0);
+	return;
 }
