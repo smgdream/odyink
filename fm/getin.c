@@ -7,8 +7,8 @@
 char getchr(void)
 {
 	int i = 0;
-	char ch = '\0';
-	char tc = '\0';
+	signed char ch = '\0';
+	signed char tc = '\0';
 
 	while ((tc = fgetc(stdin)) != '\n' && tc != EOF)
 		if (i++ == 0)
@@ -26,7 +26,7 @@ int getstr(char *s, int size)
 	int i = 0;
 	--size;
 
-	char buf[SIZE_BIG];
+	signed char buf[SIZE_BIG];
 	while ((buf[i] = fgetc(stdin)) != '\n' && buf[i] != EOF && i < SIZE_BIG)
 		++i;
 	for (i = 0; i < size && (*(s + i) = *(buf + i)) != '\n'; ++i)

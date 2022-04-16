@@ -30,7 +30,7 @@ void install(void)
 	faddout("./odydata/doc/0.txt", "Odyink is make by smgdream & Andyccr\n");
 	sprintf(logs, "%s (UTC)\t %s\n", timeStr(UTC), "Install Odyink Server");
 	fnewout("./odydata/odyink.log", logs);
-	printf("Finish\n");
+	printf("\nFinish\n");
 	genSleep(2);
 	return;
 }

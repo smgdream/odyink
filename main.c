@@ -4,7 +4,7 @@
 
 // Odyink Server
 // v0.5-pre1
-// 2022-04-16 16:29 (UTC+8)
+// 2022-04-16 (UTC+8)
 
 int main()
 {
