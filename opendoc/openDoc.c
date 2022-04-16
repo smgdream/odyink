@@ -18,7 +18,10 @@ void openDoc(int id)
 		clear();
 		char *docType = NULL;
 		char docPath[32];
-		sprintf(docPath, "./odydata/doc/%d.%s", id, docType = readType(id));
+
+		docType = readType(id);
+		sprintf(docPath, "./odydata/doc/%d.%s", id, docType);
+		
 		if (!strcmp(docType, "txt")) {
 			viewText(docPath);
 			putchar('\n');

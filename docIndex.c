@@ -14,10 +14,11 @@ void docIndex(void)
 		if (findSign == 0) {
 			clear();
 			viewIndex("./odydata/docindex.ini");
+			printf("\n\n%d documents in total\n", fgeti("./odydata/docnum.ini"));
 		}
 		findSign = 0;
 		//
-		printf("\n\n[I]mport   [R]ename  [D]elte\n");
+		printf("\n[I]mport   [R]ename  [D]elte\n");
 		printf("[O]ptions  [S]earch  [E]xit\n");
 		printf("\n");
 		printf("ID:");

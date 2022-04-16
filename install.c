@@ -31,6 +31,6 @@ void install(void)
 	sprintf(logs, "%s (UTC)\t %s\n", timeStr(UTC), "Install Odyink Server");
 	fnewout("./odydata/odyink.log", logs);
 	printf("Finish\n");
-	gensleep(2);
+	genSleep(2);
 	return;
 }
