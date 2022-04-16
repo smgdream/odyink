@@ -3,11 +3,16 @@
 #include "include/def.h"
 #include "include/format.h"
 
+#define SIZE_MED 256
+
 void install(void)
 {
-	char index[81];
-	char logs[256];
+	char index[INDEX_LEN];
+	char logs[SIZE_MED];
+
 	// Install Odyink Server
+	printf("Enter to start installation\n");
+	getchr();
 	printf("Instailling Odyink Server...\n");
 	// Make dir odydata
 	if (OSNUM)
@@ -25,5 +30,7 @@ void install(void)
 	faddout("./odydata/doc/0.txt", "Odyink is make by smgdream & Andyccr\n");
 	sprintf(logs, "%s (UTC)\t %s\n", timeStr(UTC), "Install Odyink Server");
 	fnewout("./odydata/odyink.log", logs);
-	//printf("Enter to finish install\n");
+	printf("Finish\n");
+	gensleep(2);
+	return;
 }

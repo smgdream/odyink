@@ -3,8 +3,8 @@
 //#include "include/debug.h"
 
 // Odyink Server
-// version 0.5
-// 2022-04-15 23:03:00 (UTC+8)
+// v0.5-pre1
+// 2022-04-16 10:06:00 (UTC+8)
 
 int main()
 {

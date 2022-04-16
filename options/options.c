@@ -36,4 +36,5 @@ void options(void)
 		}
 		continue;
 	}
+	return;
 }

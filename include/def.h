@@ -44,6 +44,8 @@
 		void viewText(char *fpath);
 		void viewIndex(char *fpath);
 		char *readType(int docId);
+		int getstr(char *Buf, int MaxCount);
+		char getchr(void);
 		int search(char *keyword);
 		int backDoc(int id);
 		int nextDoc(int id);
@@ -51,8 +53,6 @@
 
 	// Process
 		int stoi(char *numstr);
-		int getstr(char *Buf, int MaxCount);
-		char getchr(void);
 		char *itos(int number);
 		char *timeStr(int zone);
 		char *rmQuote(char *s);
