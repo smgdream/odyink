@@ -2,7 +2,7 @@
 
 void viewIndex(char *fpath)
 {
-	char ch = '\0';
+	signed char ch = '\0';
 	FILE *fp = NULL;
 	fp = fopen(fpath, "r");
 	if (fp == NULL)
