@@ -7,7 +7,7 @@ del /f /s /q *.tmp.* > nul 2> nul
 if "%1"=="clean" exit
 echo makeing...
 ::::::::::::::::::::::::::::::::::::::::::::::::
-set cc="D:\gcc10\bin\gcc.exe"
+set cc="gcc.exe"
 echo %cc% ^^> link.tmp.bat
 for /f %%o in (make.ini) do (
 	echo CC %%o
