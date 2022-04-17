@@ -13,6 +13,7 @@ void install(void)
 	// Install Odyink Server
 	printf("Enter to start installation\n");
 	getchr();
+	clear();
 	printf("Instailling Odyink Server...\n");
 	// Make dir odydata
 	if (OSNUM)
