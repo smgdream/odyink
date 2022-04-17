@@ -33,5 +33,6 @@ void install(void)
 	fnewout("./odydata/odyink.log", logs);
 	printf("\nFinish\n");
 	genSleep(2);
+	clear();
 	return;
 }
