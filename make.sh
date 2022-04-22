@@ -3,25 +3,24 @@ gcc -Wall \
 main.c \
 install.c \
 docIndex.c \
-importDoc.c \
-deleteDoc.c \
-renameDoc.c \
 fm/fileio.c \
 fm/viewIndex.c \
 fm/switchDoc.c \
-fm/readType.c \
 fm/getin.c \
+fm/cleanData.c \
+fm/readType.c \
 fm/getcUTF8.c \
 fm/searchItem.c \
-fm/indexCov.c \
-fm/typeCov.c \
+network/getdata.c \
+network/getdoc.c \
+network/geturl.c \
+network/webget.c \
+network/write_url.c \
 process/crlfTo0.c \
 process/sitois.c \
-process/timeStr.c \
 process/arrclean.c \
 process/pathOpt.c \
 process/getType.c \
-process/fill.c \
 opendoc/openDoc.c \
 opendoc/viewText.c \
 opendoc/runSh.c \
@@ -33,9 +32,9 @@ options/options.c \
 options/help.c \
 options/about.c \
 options/uninstall.c \
-options/reinstall.c \
+options/change_website.c \
 command/delalldoc.c \
 command/cmdSet.c \
 command/command.c \
--o OdyinkServer
-#./OdyinkServer
+-o OdyinkClient
+#./OdyinkClient

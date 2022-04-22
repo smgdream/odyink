@@ -1,9 +1,10 @@
+#include <stdio.h>
 #include "include/def.h"
 
 //#include "include/debug.h"
 
-// Odyink Server
-// v0.5-pre1
+// Odyink Client
+// v0.5.0.1-Dev
 // 2022-04-17 (UTC+8)
 
 int main()
@@ -12,12 +13,20 @@ int main()
 		cmdInit();
 	clear();
 
-	if (!fexist("./odydata/odyink.log"))
+	if (!fexist("./odydata/website.ini"))
 		install();
 	clear();
 
-	docIndex();
+	printf("Getting data...\n");
+	if (!getData(getUrl("./odydata/website.ini")))
+		docIndex();
+	else {
+		clear();
+		printf("Network error!\n");
+		genSleep(2);
+	}
 
+	cleanData();
 	if (OSNUM)
 		cmdRestore();
 	clear();

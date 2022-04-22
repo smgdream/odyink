@@ -20,6 +20,7 @@ void openDoc(int id)
 		char docPath[32];
 
 		docType = readType(id);
+		getDoc(id, docType);
 		sprintf(docPath, "./odydata/doc/%d.%s", id, docType);
 		
 		if (!strcmp(docType, "txt")) {
@@ -56,15 +57,13 @@ void openDoc(int id)
 			genSleep(2);
 			break;
 		}
+		if (fexist(docPath))
+			remove(docPath);
 		//
 		ipOpt:
-		printf("          [E]dit          \n");
 		printf("[B]ack    [Q]uit    [N]ext\n");
 		printf("\ninput: ");
 		switch (toupper(getchr())) {
-			case 'E':
-				editText(docPath);
-				break;
 			case 'N':
 				id = nextDoc(id);
 				break;

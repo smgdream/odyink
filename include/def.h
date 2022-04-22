@@ -8,9 +8,6 @@
 
 void install(void);
 void docIndex(void);
-void importDoc(void);
-void deleteDoc(void);
-void renameDoc(void);
 
 
 // Open Document
@@ -21,17 +18,24 @@ void renameDoc(void);
 	void options(void);
 	void help(void);
 	void about(void);
-	void reinstall(void);
+	void changeWebsite(void);
 	void uninstall(void);
 //
 
-//OS Commands
+// OS Commands
 	void clear(void);
 	void cmdInit(void);
 	void cmdRestore(void);
 	void delAllDoc(void);
 	void genSleep(int second);
-	void editText(const char *fpath);
+//
+
+// Network
+	int webGet(const char *url, const char *savePath);
+	int getData(const char *url);
+	int getDoc(int id, const char *type);
+	void writeUrl(void);
+	const char *getUrl(const char *fpath);
 //
 
 // Files Manipulation
@@ -40,8 +44,6 @@ void renameDoc(void);
 	void fnewout(char *fpath,char *text);
 	void faddout(char *fpath,char *text);
 	int fgeti(char *fpath);
-	void typeCov(int docId, char *type);
-	void indexCov(int docId, char *index);
 	void viewText(char *fpath);
 	void viewIndex(char *fpath);
 	char *readType(int docId);
@@ -50,20 +52,24 @@ void renameDoc(void);
 	int search(char *keyword);
 	int backDoc(int id);
 	int nextDoc(int id);
+	void cleanData(void);
 //
 
 // Process
 	int stoi(char *numstr);
 	char *itos(int number);
-	char *timeStr(int zone);
+	//char *timeStr(int zone);
 	char *rmQuote(char *s);
 	void arrclean(char *s, int size);
 	char *getType(char *fpath);
-	char *fill(char *string, int size, char ch);
+	//char *fill(char *string, int size, char ch);
 	char *unixPath(char *fpath);
 	char *winPath(char *fpath);
 	// char *crlfto0(char *string);
 	// char *reverse(char *string);
+//
+
+//Other
 //
 
 #endif

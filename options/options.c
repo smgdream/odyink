@@ -9,7 +9,7 @@ void options(void)
 		clear();
 		printf("\n[H]elp\n");
 		printf("\n[A]bout\n");
-		printf("\n[R]einstall\n");
+		printf("\n[C]hange website\n");
 		printf("\n[U]ninstall\n");
 		printf("\n[B]ack\n");
 		printf("\n\ninput: ");
@@ -20,8 +20,8 @@ void options(void)
 			case 'A':
 				about();
 				break;
-			case 'R':
-				reinstall();
+			case 'C':
+				changeWebsite();
 				break;
 			case 'U':
 				uninstall();

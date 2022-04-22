@@ -3,7 +3,7 @@
 
 void cmdInit(void)
 {
-	system("title Odyink Server");
+	system("title Odyink Client");
 	system("chcp 65001");
 	return;
 }
