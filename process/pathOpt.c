@@ -48,7 +48,7 @@ char *rmQuote(char *s)
 	if (rmqs[0] != '\0') {
 		++rmqs;
 		for (i = 0; rmqs[i] != '\'' && rmqs[i] != '"' && rmqs[i] != '\0'; ++i)
-		    ;	
+			;	
 		if (rmqs[i] != '\0') {
 			rmqs[i] = '\0';
 			return rmqs;
