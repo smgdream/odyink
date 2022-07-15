@@ -1,20 +1,20 @@
 #! /bin/bash
-gcc -Wall \
+gcc -O2 -Wall -W -pedantic -std=c99 -I./include -idirafter ./lap/include \
 main.c \
 install.c \
 docIndex.c \
-importDoc.c \
-deleteDoc.c \
+import_doc.c \
+delete_doc.c \
 renameDoc.c \
-fm/fileio.c \
-fm/viewIndex.c \
-fm/switchDoc.c \
-fm/readType.c \
-fm/getin.c \
-fm/getcUTF8.c \
-fm/searchItem.c \
-fm/indexCov.c \
-fm/typeCov.c \
+fileop/fileio.c \
+fileop/viewIndex.c \
+fileop/switchDoc.c \
+fileop/readType.c \
+fileop/getin.c \
+fileop/getcUTF8.c \
+fileop/searchItem.c \
+fileop/indexCov.c \
+fileop/typeCov.c \
 process/crlfTo0.c \
 process/sitois.c \
 process/timeStr.c \
@@ -37,5 +37,5 @@ options/reinstall.c \
 command/delalldoc.c \
 command/cmdSet.c \
 command/command.c \
--o OdyinkServer
-#./OdyinkServer
+-o odyink_server.out
+#./odyink_server.out
